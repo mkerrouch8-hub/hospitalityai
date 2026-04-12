@@ -347,27 +347,8 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
   <div id="lo-powered">Powered by LUXE OPS AI</div>
 </div>
 <script>
-const LO_SYSTEM=`You are the AI sales assistant for LUXE OPS, a premium AI automation company for the hospitality industry based in Morocco. Be warm, concise, and professional. Keep responses under 80 words.
-
-ABOUT LUXE OPS:
-- We build AI automation for hotels, restaurants, riads, resorts, and event venues
-- Founded by Mohammed Kerrouch
-- Email: kerrouch@luxeops.it.com | WhatsApp: +212 699 072 698 | Website: www.luxeops.it.com
-
-OUR 4 MODULES:
-1. Aria AI Concierge — 24/7 chatbot in 4 languages (EN/FR/AR/ES), trained on hotel data, deploys in 48h
-2. Staff Operations AI — automates housekeeping, maintenance, staff briefings
-3. Reviews & Marketing AI — auto-responds to Google/TripAdvisor reviews, sentiment analysis
-4. Payments & Invoicing AI — auto invoices, payment reminders, revenue reports
-
-PRICING (MAD/month):
-- Starter: 2,500 MAD (~$250) — Module 1 only. Setup: 3,000 MAD
-- Growth: 4,000 MAD (~$400) — Modules 1+3. Setup: 5,000 MAD (MOST POPULAR)
-- Full Suite: 7,500 MAD (~$750) — All 4 modules. Setup: 8,000 MAD
-- No contracts. Cancel anytime with 30 days notice.
-
-Always invite them to book a free 30-min demo via WhatsApp or email.`;
-let loHistory=[];
+const WEBHOOK='https://mohammedkerr.app.n8n.cloud/webhook/bf605270-3a13-4965-ade2-06c0dbe356db/chat';
+const SESSION='luxeops_'+Math.random().toString(36).substr(2,9);
 let loOpen=false;
 let loInit=false;
 function loToggle(){
@@ -383,7 +364,6 @@ function loAddMsg(text,role){
   d.innerHTML=`<div class="lo-mav">${role==='bot'?'L':'U'}</div><div class="lo-bbl">${text.replace(/\n/g,'<br>')}</div>`;
   box.appendChild(d);
   box.scrollTop=box.scrollHeight;
-  loHistory.push({role:role==='bot'?'assistant':'user',content:text});
 }
 function loShowTyping(){
   const box=document.getElementById('lo-msgs');
@@ -397,6 +377,39 @@ async function loAsk(text){
   loAddMsg(text,'user');
   loShowTyping();
   try{
-    const msgs=loHistory.slice(-10);
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      meth
+    const res=await fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:SESSION,action:'sendMessage',chatInput:text})});
+    const data=await res.json();
+    document.getElementById('lo-typ')?.remove();
+    let reply=data.output||data.text||data.message||data.reply||'';
+    if(reply)reply=reply.replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>');
+    loAddMsg(reply||"How can I help you today?","bot");
+  }catch(e){
+    document.getElementById('lo-typ')?.remove();
+    loAddMsg("Please reach us at kerrouch@luxeops.it.com or WhatsApp +212 699 072 698!","bot");
+  }
+}
+function loSend(){
+  const ci=document.getElementById('lo-ci');
+  const text=ci.value.trim();
+  if(!text)return;
+  ci.value='';
+  loAsk(text);
+}
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20);});
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+document.getElementById('luxe-form').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=this.querySelector('button[type="submit"]');
+  btn.textContent='Sending...';btn.disabled=true;
+  const data=new FormData(this);
+  try{
+    const res=await fetch('https://formspree.io/f/xqewzlez',{method:'POST',body:data,headers:{'Accept':'application/json'}});
+    if(res.ok){btn.textContent='Message Sent ✓';btn.style.background='#4CAF50';this.reset();}
+    else{btn.textContent='Error — try WhatsApp';btn.style.background='#E53935';}
+  }catch(e){btn.textContent='Error — try WhatsApp';btn.style.background='#E53935';}
+  setTimeout(()=>{btn.textContent='Send Message →';btn.style.background='';btn.disabled=false;},3000);
+});
+</script>
+</body>
+</
