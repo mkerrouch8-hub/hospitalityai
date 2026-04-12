@@ -1,153 +1,439 @@
-✦ LUXE OPS
-	•	SOLUTION
-	•	MODULES
-	•	PRICING
-	•	CONTACT
-BOOK A DEMO
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LUXE OPS — AI Hospitality Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9A84C;
+  --gold-l:#E8C870;
+  --gold-d:#8B6914;
+  --gold-p:#F7F0DC;
+  --dark:#07060A;
+  --dark-2:#0F0D14;
+  --dark-3:#1A1622;
+  --dark-4:#252030;
+  --mid:#3D3650;
+  --muted:#8A7FA0;
+  --light:#F2EEF8;
+  --white:#FFFFFF;
+  --border:rgba(201,168,76,0.15);
+  --border-h:rgba(201,168,76,0.35);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--dark);color:var(--white);overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:all .3s}
+nav.scrolled{background:rgba(7,6,10,.92);border-bottom-color:var(--border);backdrop-filter:blur(12px)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--gold-l);letter-spacing:3px;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold-l)}
+.nav-cta{background:var(--gold);color:var(--dark);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:9px 20px;border-radius:3px;text-decoration:none;font-weight:500;transition:background .2s}
+.nav-cta:hover{background:var(--gold-l)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 1.5rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(201,168,76,.07) 0%,transparent 70%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 0%,transparent 100%)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.08);border:1px solid var(--border);border-radius:100px;padding:6px 18px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;position:relative}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:#4CAF50;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,6.5rem);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:1.5rem;position:relative}
+.hero h1 em{font-style:italic;color:var(--gold-l)}
+.hero-sub{font-size:clamp(1rem,2vw,1.2rem);color:rgba(255,255,255,.45);max-width:580px;line-height:1.7;margin-bottom:2.5rem;font-weight:300;position:relative}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative}
+.btn-primary{background:var(--gold);color:var(--dark);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 32px;border-radius:3px;text-decoration:none;font-weight:500;transition:all .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--gold-l);transform:translateY(-1px)}
+.btn-ghost{border:1px solid var(--border-h);color:var(--gold-l);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 32px;border-radius:3px;text-decoration:none;transition:all .2s}
+.btn-ghost:hover{background:rgba(201,168,76,.08)}
+.hero-stats{display:flex;gap:3rem;margin-top:5rem;position:relative;flex-wrap:wrap;justify-content:center}
+.hero-stat .num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold-l)}
+.hero-stat .lbl{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+section{padding:6rem 1.5rem}
+.container{max-width:1100px;margin:0 auto}
+.section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;font-weight:500}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.2;color:var(--white)}
+.section-title em{font-style:italic;color:var(--gold-l)}
+.section-sub{font-size:15px;color:rgba(255,255,255,.45);margin-top:.6rem;line-height:1.7;max-width:540px;font-weight:300}
+.problem{background:var(--dark-2)}
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;margin-top:3rem;border:1px solid var(--border)}
+.problem-card{padding:2rem 1.5rem;background:var(--dark-2);transition:background .2s}
+.problem-card:hover{background:var(--dark-3)}
+.p-icon{font-size:1.8rem;margin-bottom:1rem}
+.p-title{font-size:15px;font-weight:500;color:var(--white);margin-bottom:.5rem}
+.p-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5px;margin-top:3rem}
+.module-card{background:var(--dark-2);border:1px solid var(--border);padding:2rem;transition:all .25s;cursor:default;position:relative;overflow:hidden}
+.module-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.module-card:hover{background:var(--dark-3);border-color:var(--border-h)}
+.module-card:hover::before{transform:scaleX(1)}
+.m-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(201,168,76,.2);line-height:1;margin-bottom:.5rem}
+.m-title{font-size:16px;font-weight:500;color:var(--white);margin-bottom:.4rem}
+.m-sub{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+.m-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:1.2rem}
+.m-features{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.m-features li{font-size:12px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:6px}
+.m-features li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.pricing{background:var(--dark-2)}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:3rem}
+.price-card{background:var(--dark-3);border:1px solid var(--border);border-radius:8px;padding:2rem;position:relative;transition:transform .2s}
+.price-card:hover{transform:translateY(-4px)}
+.price-card.featured{border-color:var(--gold);background:linear-gradient(135deg,var(--dark-3),rgba(201,168,76,.06))}
+.price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--dark);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 14px;border-radius:100px;font-weight:500;white-space:nowrap}
+.price-name{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.price-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--white);line-height:1}
+.price-currency{font-size:1.2rem;vertical-align:top;margin-top:.6rem;display:inline-block;color:var(--gold-l)}
+.price-period{font-size:13px;color:var(--muted);margin-bottom:.3rem}
+.price-usd{font-size:12px;color:var(--muted);margin-bottom:.3rem}
+.price-setup{font-size:12px;color:var(--muted);margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.8rem}
+.price-features li{font-size:13px;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:8px}
+.price-features li::before{content:'✓';color:var(--gold);font-size:11px;font-weight:600;flex-shrink:0}
+.price-btn{display:block;text-align:center;background:transparent;border:1px solid var(--border-h);color:var(--gold-l);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:12px;border-radius:3px;text-decoration:none;transition:all .2s}
+.price-card.featured .price-btn{background:var(--gold);border-color:var(--gold);color:var(--dark)}
+.price-btn:hover{background:var(--gold);border-color:var(--gold);color:var(--dark)}
+.targets-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:3rem}
+.target-card{background:var(--dark-2);border:1px solid var(--border);border-radius:8px;padding:1.5rem 1rem;text-align:center;transition:all .2s}
+.target-card:hover{border-color:var(--border-h);background:var(--dark-3)}
+.t-icon{font-size:1.8rem;margin-bottom:.6rem}
+.t-name{font-size:13px;font-weight:500;color:var(--white);margin-bottom:.2rem}
+.t-desc{font-size:11px;color:var(--muted)}
+.demo-strip{background:linear-gradient(135deg,var(--dark-3),rgba(201,168,76,.06));border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 1.5rem;text-align:center}
+.demo-strip h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;color:var(--white);margin-bottom:.8rem}
+.demo-strip p{font-size:14px;color:rgba(255,255,255,.45);margin-bottom:2rem}
+.demo-link{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--dark);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 32px;border-radius:3px;text-decoration:none;font-weight:500;transition:all .2s}
+.demo-link:hover{background:var(--gold-l)}
+.contact{background:var(--dark)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem}
+@media(max-width:680px){.contact-grid{grid-template-columns:1fr}}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.contact-item{display:flex;align-items:center;gap:1rem}
+.c-icon{width:42px;height:42px;border-radius:8px;background:rgba(201,168,76,.08);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.c-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.c-val{font-size:14px;color:var(--white)}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.form-field{display:flex;flex-direction:column;gap:.4rem}
+.form-field label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.form-field input,.form-field textarea,.form-field select{background:var(--dark-3);border:1px solid var(--border);border-radius:4px;padding:11px 14px;font-size:13px;color:var(--white);font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--border-h)}
+.form-field textarea{min-height:100px;resize:vertical}
+.form-field select option{background:var(--dark-3)}
+.form-submit{background:var(--gold);color:var(--dark);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:13px;border-radius:3px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:500;transition:background .2s}
+.form-submit:hover{background:var(--gold-l)}
+footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 1.5rem 2rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center}
+@media(max-width:600px){.footer-inner{grid-template-columns:1fr}}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold-l);letter-spacing:3px;margin-bottom:.4rem}
+.footer-copy{font-size:11px;color:var(--muted)}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--gold-l)}
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:none}
+@media(max-width:768px){.nav-links{display:none}.hero-stats{gap:2rem}}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a class="nav-logo" href="#">✦ LUXE OPS</a>
+  <ul class="nav-links">
+    <li><a href="#solution">Solution</a></li>
+    <li><a href="#modules">Modules</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Book a Demo</a>
+</nav>
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-eyebrow"><span class="hero-dot"></span>AI-Powered Hospitality Automation</div>
+  <h1>The AI That Runs<br><em>Your Hotel 24/7</em></h1>
+  <p class="hero-sub">Automate guest communication, manage reviews, and increase direct bookings — without adding staff.</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="#contact">Book a Free Demo</a>
+    <a class="btn-ghost" href="#modules">See How It Works</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">24/7</div><div class="lbl">Guest Coverage</div></div>
+    <div class="hero-stat"><div class="num">40%</div><div class="lbl">More Bookings</div></div>
+    <div class="hero-stat"><div class="num">3×</div><div class="lbl">Faster Responses</div></div>
+    <div class="hero-stat"><div class="num">90%</div><div class="lbl">Less Manual Work</div></div>
+  </div>
+</section>
+<section class="problem" id="solution">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">The Challenge</div>
+      <div class="section-title">Hotels Lose Revenue<br><em>Every Single Day</em></div>
+      <p class="section-sub">Without AI automation, your team is overwhelmed, guests are left waiting, and bookings slip away.</p>
+    </div>
+    <div class="problem-grid fade-up">
+      <div class="problem-card"><div class="p-icon">😴</div><div class="p-title">Unanswered Inquiries at Night</div><div class="p-desc">67% of guests leave without booking because their question went unanswered after hours.</div></div>
+      <div class="problem-card"><div class="p-icon">⏳</div><div class="p-title">3–5 Min Wait Times</div><div class="p-desc">Guests today expect instant responses. Every minute of delay costs you a potential booking.</div></div>
+      <div class="problem-card"><div class="p-icon">⭐</div><div class="p-title">Unmanaged Bad Reviews</div><div class="p-desc">Negative reviews left unanswered damage your reputation and reduce future occupancy rates.</div></div>
+      <div class="problem-card"><div class="p-icon">💸</div><div class="p-title">Revenue Lost to Slow Replies</div><div class="p-desc">40% of guest inquiries happen outside business hours when your team isn't available.</div></div>
+    </div>
+  </div>
+</section>
+<section id="modules">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Our Solution</div>
+      <div class="section-title">4 Powerful AI Modules</div>
+      <p class="section-sub">Each module solves a specific hospitality challenge. Use one — or combine all four for total automation.</p>
+    </div>
+    <div class="modules-grid fade-up">
+      <div class="module-card"><div class="m-num">01</div><div class="m-sub">AI Concierge</div><div class="m-title">Aria — Guest Concierge</div><div class="m-desc">A fully branded AI concierge trained on your hotel — answering guests instantly in 4 languages, around the clock.</div><ul class="m-features"><li>24/7 chat on your website</li><li>Room, dining & spa inquiries</li><li>English, French, Arabic, Spanish</li><li>Booking assistance & FAQ</li><li>Intent detection & logging</li></ul></div>
+      <div class="module-card"><div class="m-num">02</div><div class="m-sub">Operations</div><div class="m-title">Staff Operations AI</div><div class="m-desc">Automate housekeeping, maintenance, and staff communication so your team focuses on what matters most.</div><ul class="m-features"><li>Auto housekeeping task routing</li><li>Maintenance ticket creation</li><li>Daily staff briefings</li><li>Shift reminders & alerts</li><li>Slack & WhatsApp integration</li></ul></div>
+      <div class="module-card"><div class="m-num">03</div><div class="m-sub">Reputation</div><div class="m-title">Reviews & Marketing AI</div><div class="m-desc">Monitor every review, auto-respond professionally, and turn happy guests into repeat customers.</div><ul class="m-features"><li>Auto review requests post-stay</li><li>AI-drafted personalized replies</li><li>Sentiment analysis & reports</li><li>Upsell campaigns to past guests</li><li>Google & TripAdvisor monitoring</li></ul></div>
+      <div class="module-card"><div class="m-num">04</div><div class="m-sub">Finance</div><div class="m-title">Payments & Invoicing AI</div><div class="m-desc">Automate billing, follow up on unpaid invoices, and get weekly revenue insights without lifting a finger.</div><ul class="m-features"><li>Auto invoice generation</li><li>Payment reminders & follow-ups</li><li>Weekly revenue reports</li><li>No-show & refund alerts</li><li>Stripe & PayPal integration</li></ul></div>
+    </div>
+  </div>
+</section>
+<div class="demo-strip fade-up">
+  <div class="section-label" style="text-align:center;margin-bottom:.8rem">Live Demo</div>
+  <h2>See Aria in Action — Right Now</h2>
+  <p>Explore our fully functional AI concierge demo, built on a 5-star reference hotel in Fès, Morocco.</p>
+  <a class="demo-link" href="https://ops-kerr.netlify.app" target="_blank"><span>→</span> Open Live Demo</a>
+</div>
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="fade-up" style="text-align:center">
+      <div class="section-label">Pricing</div>
+      <div class="section-title">Simple, Transparent Pricing</div>
+      <p class="section-sub" style="margin:0 auto">No hidden fees. No long-term contracts. Cancel anytime with 30 days notice.</p>
+    </div>
+    <div class="pricing-grid fade-up">
+      <div class="price-card">
+        <div class="price-name">Starter</div>
+        <div><span class="price-currency">MAD </span><span class="price-num">2,500</span></div>
+        <div class="price-period">/ month</div>
+        <div class="price-usd">≈ $250 USD / month</div>
+        <div class="price-setup">+ Setup: 3,000 MAD (one-time)</div>
+        <ul class="price-features"><li>Module 1 — AI Concierge (Aria)</li><li>4 languages supported</li><li>Website embed widget</li><li>48-hour deployment</li><li>Email support</li></ul>
+        <a class="price-btn" href="#contact">Get Started</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">⭐ Most Popular</div>
+        <div class="price-name">Growth</div>
+        <div><span class="price-currency">MAD </span><span class="price-num">4,000</span></div>
+        <div class="price-period">/ month</div>
+        <div class="price-usd">≈ $400 USD / month</div>
+        <div class="price-setup">+ Setup: 5,000 MAD (one-time)</div>
+        <ul class="price-features"><li>Modules 1 + 3 — Concierge & Reviews</li><li>AI review monitoring & replies</li><li>Google & TripAdvisor tracking</li><li>Monthly performance report</li><li>Priority support</li></ul>
+        <a class="price-btn" href="#contact">Get Started</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Full Suite</div>
+        <div><span class="price-currency">MAD </span><span class="price-num">7,500</span></div>
+        <div class="price-period">/ month</div>
+        <div class="price-usd">≈ $750 USD / month</div>
+        <div class="price-setup">+ Setup: 8,000 MAD (one-time)</div>
+        <ul class="price-features"><li>All 4 Modules — Complete System</li><li>Staff operations automation</li><li>Payments & invoicing AI</li><li>Dedicated account manager</li><li>24/7 priority support</li></ul>
+        <a class="price-btn" href="#contact">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="targets">
+  <div class="container">
+    <div class="fade-up" style="text-align:center">
+      <div class="section-label">For Who</div>
+      <div class="section-title">Built for Every<br><em>Hospitality Business</em></div>
+    </div>
+    <div class="targets-grid fade-up">
+      <div class="target-card"><div class="t-icon">🏨</div><div class="t-name">Hotels</div><div class="t-desc">3★ to 5★, all sizes</div></div>
+      <div class="target-card"><div class="t-icon">🍽️</div><div class="t-name">Restaurants</div><div class="t-desc">Fine dining & casual</div></div>
+      <div class="target-card"><div class="t-icon">🏰</div><div class="t-name">Riads</div><div class="t-desc">Boutique & luxury</div></div>
+      <div class="target-card"><div class="t-icon">🏖️</div><div class="t-name">Resorts</div><div class="t-desc">Beach & spa wellness</div></div>
+      <div class="target-card"><div class="t-icon">🛎️</div><div class="t-name">Guesthouses</div><div class="t-desc">B&Bs & boutique stays</div></div>
+      <div class="target-card"><div class="t-icon">🎪</div><div class="t-name">Event Venues</div><div class="t-desc">Weddings & conferences</div></div>
+    </div>
+  </div>
+</section>
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Get in Touch</div>
+      <div class="section-title">Ready to Transform<br><em>Your Guest Experience?</em></div>
+      <p class="section-sub">Book a free 30-minute demo and see Aria live on your hotel in 48 hours.</p>
+    </div>
+    <div class="contact-grid fade-up">
+      <div class="contact-info">
+        <div class="contact-item"><div class="c-icon">📧</div><div><div class="c-label">Email</div><div class="c-val">kerrouch@luxeops.it.com</div></div></div>
+        <div class="contact-item"><div class="c-icon">📱</div><div><div class="c-label">WhatsApp</div><div class="c-val">+212 699 072 698</div></div></div>
+        <div class="contact-item"><div class="c-icon">🌐</div><div><div class="c-label">Website</div><div class="c-val">www.luxeops.it.com</div></div></div>
+        <div class="contact-item"><div class="c-icon">⚡</div><div><div class="c-label">Deployment</div><div class="c-val">Live in 48 hours after signing</div></div></div>
+        <a href="https://wa.me/212699072698" target="_blank" style="display:inline-flex;align-items:center;gap:10px;margin-top:1rem;text-decoration:none;background:var(--gold);color:var(--dark);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 28px;border-radius:3px;font-weight:500;font-family:'DM Sans',sans-serif;border:2px solid var(--gold-l);transition:all .2s;box-shadow:0 0 24px rgba(201,168,76,.25)">📱 Book Demo on WhatsApp</a>
+      </div>
+      <div class="contact-form">
+        <div class="form-field"><label>Your Name</label><input type="text"/></div>
+        <div class="form-field"><label>Hotel / Business Name</label><input type="text"/></div>
+        <div class="form-field"><label>Email Address</label><input type="email"/></div>
+        <div class="form-field"><label>Interested In</label><select><option value="">— Select a module —</option><option>Module 1 — AI Concierge (Aria)</option><option>Module 3 — Reviews & Reputation</option><option>Growth Package (Modules 1+3)</option><option>Full Suite (All 4 Modules)</option></select></div>
+        <div class="form-field"><label>Message (optional)</label><textarea></textarea></div>
+        <button class="form-submit" onclick="handleSubmit()">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">✦ LUXE OPS</div>
+      <div class="footer-copy">© 2026 LUXE OPS — AI Hospitality Solutions. Morocco.</div>
+    </div>
+    <div class="footer-links">
+      <a href="#solution">Solution</a>
+      <a href="#modules">Modules</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://ops-kerr.netlify.app" target="_blank">Live Demo</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+<style>
+#lo-btn{position:fixed;bottom:28px;right:28px;background:var(--gold);color:var(--dark);border:none;border-radius:50px;padding:13px 22px;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;z-index:9999;display:flex;align-items:center;gap:8px;letter-spacing:.5px;box-shadow:0 4px 24px rgba(201,168,76,.35);transition:all .2s}
+#lo-btn:hover{background:var(--gold-l);transform:translateY(-2px)}
+#lo-win{position:fixed;bottom:88px;right:28px;width:360px;max-height:520px;background:#07060A;border:1px solid rgba(201,168,76,.3);border-radius:16px;display:none;flex-direction:column;z-index:9998;box-shadow:0 16px 48px rgba(0,0,0,.5);font-family:'DM Sans',sans-serif;overflow:hidden}
+#lo-win.open{display:flex}
+#lo-head{background:#0F0D14;border-bottom:1px solid rgba(201,168,76,.15);padding:12px 14px;display:flex;align-items:center;gap:10px}
+.lo-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#E8C870);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:15px;color:#07060A;font-weight:600;flex-shrink:0}
+.lo-info{flex:1}
+.lo-name{font-size:13px;font-weight:500;color:#fff}
+.lo-status{font-size:10px;color:#4CAF50;display:flex;align-items:center;gap:3px}
+.lo-dot{width:5px;height:5px;border-radius:50%;background:#4CAF50;display:inline-block}
+#lo-close{background:none;border:none;color:rgba(255,255,255,.35);font-size:18px;cursor:pointer;line-height:1;padding:0 4px}
+#lo-msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;min-height:200px;max-height:340px}
+.lo-msg{display:flex;gap:7px;align-items:flex-end}
+.lo-msg.user{flex-direction:row-reverse}
+.lo-mav{width:24px;height:24px;border-radius:50%;background:rgba(201,168,76,.15);display:flex;align-items:center;justify-content:center;font-size:10px;color:#C9A84C;flex-shrink:0}
+.lo-bbl{max-width:82%;padding:8px 11px;border-radius:13px;font-size:12.5px;line-height:1.55}
+.lo-msg.bot .lo-bbl{background:#1A1622;color:rgba(255,255,255,.82);border-bottom-left-radius:3px;border:1px solid rgba(201,168,76,.12)}
+.lo-msg.user .lo-bbl{background:var(--gold);color:#07060A;border-bottom-right-radius:3px}
+.lo-typing{display:flex;gap:3px;align-items:center;padding:6px 8px}
+.lo-td{width:5px;height:5px;border-radius:50%;background:#C9A84C;animation:loTyp 1.2s infinite}
+.lo-td:nth-child(2){animation-delay:.2s}.lo-td:nth-child(3){animation-delay:.4s}
+@keyframes loTyp{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+#lo-qr{display:flex;gap:5px;flex-wrap:wrap;padding:0 10px 6px}
+.lo-qrb{background:transparent;border:1px solid rgba(201,168,76,.25);border-radius:100px;padding:4px 11px;font-size:10px;color:#C9A84C;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .15s}
+.lo-qrb:hover{background:rgba(201,168,76,.1)}
+#lo-input{border-top:1px solid rgba(201,168,76,.12);padding:10px 12px;display:flex;gap:7px;align-items:center;background:#0F0D14}
+#lo-ci{flex:1;background:#1A1622;border:1px solid rgba(201,168,76,.18);border-radius:100px;padding:8px 14px;font-size:12px;color:rgba(255,255,255,.78);font-family:'DM Sans',sans-serif;outline:none}
+#lo-ci:focus{border-color:rgba(201,168,76,.4)}
+#lo-send{width:34px;height:34px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
+#lo-send:hover{background:#E8C870}
+#lo-powered{text-align:center;font-size:9px;color:rgba(255,255,255,.18);padding:5px;background:#07060A;letter-spacing:.5px}
+</style>
+<button id="lo-btn" onclick="loToggle()">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#07060A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Chat with us
+</button>
+<div id="lo-win">
+  <div id="lo-head">
+    <div class="lo-av">L</div>
+    <div class="lo-info">
+      <div class="lo-name">LUXE OPS Assistant</div>
+      <div class="lo-status"><span class="lo-dot"></span> Online</div>
+    </div>
+    <button id="lo-close" onclick="loToggle()">✕</button>
+  </div>
+  <div id="lo-msgs"></div>
+  <div id="lo-qr">
+    <button class="lo-qrb" onclick="loAsk('What services do you offer?')">Services</button>
+    <button class="lo-qrb" onclick="loAsk('What are your prices?')">Pricing</button>
+    <button class="lo-qrb" onclick="loAsk('How fast can you deploy?')">Timeline</button>
+    <button class="lo-qrb" onclick="loAsk('I want to book a demo')">Book Demo</button>
+  </div>
+  <div id="lo-input">
+    <input id="lo-ci" placeholder="Ask us anything..." onkeydown="if(event.key==='Enter')loSend()"/>
+    <button id="lo-send" onclick="loSend()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13" stroke="#07060A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="#07060A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  <div id="lo-powered">Powered by LUXE OPS AI</div>
+</div>
+<script>
+const LO_SYSTEM=`You are the AI sales assistant for LUXE OPS, a premium AI automation company for the hospitality industry based in Morocco. Be warm, concise, and professional. Keep responses under 80 words.
 
+ABOUT LUXE OPS:
+- We build AI automation for hotels, restaurants, riads, resorts, and event venues
+- Founded by Mohammed Kerrouch
+- Email: kerrouch@luxeops.it.com | WhatsApp: +212 699 072 698 | Website: www.luxeops.it.com
 
+OUR 4 MODULES:
+1. Aria AI Concierge — 24/7 chatbot in 4 languages (EN/FR/AR/ES), trained on hotel data, deploys in 48h
+2. Staff Operations AI — automates housekeeping, maintenance, staff briefings
+3. Reviews & Marketing AI — auto-responds to Google/TripAdvisor reviews, sentiment analysis
+4. Payments & Invoicing AI — auto invoices, payment reminders, revenue reports
 
-AI-POWERED HOSPITALITY AUTOMATION
-The AI That Runs Your Hotel 24/7
-Automate guest communication, manage reviews, and increase direct bookings — without adding staff.
-BOOK A FREE DEMO
-SEE HOW IT WORKS
-24/7
-GUEST COVERAGE
-40%
-MORE BOOKINGS
-3×
-FASTER RESPONSES
-90%
-LESS MANUAL WORK
-THE CHALLENGE
-Hotels Lose Revenue
-Every Single Day
-Without AI automation, your team is overwhelmed, guests are left waiting, and bookings slip away.
-😴
-Unanswered Inquiries at Night
-67% of guests leave without booking because their question went unanswered after hours.
-⏳
-3–5 Min Wait Times
-Guests today expect instant responses. Every minute of delay costs you a potential booking.
-⭐
-Unmanaged Bad Reviews
-Negative reviews left unanswered damage your reputation and reduce future occupancy rates.
-💸
-Revenue Lost to Slow Replies
-40% of guest inquiries happen outside business hours when your team isn't available.
-OUR SOLUTION
-4 Powerful AI Modules
-Each module solves a specific hospitality challenge. Use one — or combine all four for total automation.
-01
-AI CONCIERGE
-Aria — Guest Concierge
-A fully branded AI concierge trained on your hotel — answering guests instantly in 4 languages, around the clock.
-	•	24/7 chat on your website Room, dining & spa inquiries English, French, Arabic, Spanish Booking assistance & FAQ Intent detection & logging
-02
-OPERATIONS
-Staff Operations AI
-Automate housekeeping, maintenance, and staff communication so your team focuses on what matters most.
-	•	Auto housekeeping task routing Maintenance ticket creation Daily staff briefings Shift reminders & alerts Slack & WhatsApp integration
-03
-REPUTATION
-Reviews & Marketing AI
-Monitor every review, auto-respond professionally, and turn happy guests into repeat customers.
-	•	Auto review requests post-stay AI-drafted personalized replies Sentiment analysis & reports Upsell campaigns to past guests Google & TripAdvisor monitoring
-04
-FINANCE
-Payments & Invoicing AI
-Automate billing, follow up on unpaid invoices, and get weekly revenue insights without lifting a finger.
-	•	Auto invoice generation Payment reminders & follow-ups Weekly revenue reports No-show & refund alerts Stripe & PayPal integration
-LIVE DEMO
-See Aria in Action — Right Now
-Explore our fully functional AI concierge demo, built on a 5-star reference hotel in Fès, Morocco.
-→
-OPEN LIVE DEMO
-PRICING
-Simple, Transparent Pricing
-No hidden fees. No long-term contracts. Cancel anytime with 30 days notice.
-STARTER
-MAD 2,500
-/ month
-≈ $250 USD / month
-+ Setup: 3,000 MAD (one-time)
-	•	Module 1 — AI Concierge (Aria) 4 languages supported Website embed widget 48-hour deployment Email support
-GET STARTED
-⭐ MOST POPULAR
-GROWTH
-MAD 4,000
-/ month
-≈ $400 USD / month
-+ Setup: 5,000 MAD (one-time)
-	•	Modules 1 + 3 — Concierge & Reviews AI review monitoring & replies Google & TripAdvisor tracking Monthly performance report Priority support
-GET STARTED
-FULL SUITE
-MAD 7,500
-/ month
-≈ $750 USD / month
-+ Setup: 8,000 MAD (one-time)
-	•	All 4 Modules — Complete System Staff operations automation Payments & invoicing AI Dedicated account manager 24/7 priority support
-GET STARTED
-FOR WHO
-Built for Every
-Hospitality Business
-🏨
-Hotels
-3★ to 5★, all sizes
-🍽️
-Restaurants
-Fine dining & casual
-🏰
-Riads
-Boutique & luxury
-🏖️
-Resorts
-Beach & spa wellness
-🛎️
-Guesthouses
-B&Bs & boutique stays
-🎪
-Event Venues
-Weddings & conferences
-GET IN TOUCH
-Ready to Transform
-Your Guest Experience?
-Book a free 30-minute demo and see Aria live on your hotel in 48 hours.
-📧
-EMAIL
-kerrouch@luxeops.it.com
-📱
-WHATSAPP
-+212 699 072 698
-🌐
-WEBSITE
-www.luxeops.it.com
-⚡
-DEPLOYMENT
-Live in 48 hours after signing
-📱 BOOK DEMO ON WHATSAPP
-YOUR NAME
+PRICING (MAD/month):
+- Starter: 2,500 MAD (~$250) — Module 1 only. Setup: 3,000 MAD
+- Growth: 4,000 MAD (~$400) — Modules 1+3. Setup: 5,000 MAD (MOST POPULAR)
+- Full Suite: 7,500 MAD (~$750) — All 4 modules. Setup: 8,000 MAD
+- No contracts. Cancel anytime with 30 days notice.
 
-HOTEL / BUSINESS NAME
-
-EMAIL ADDRESS
-
-INTERESTED IN
-            — Select a module —
-            Module 1 — AI Concierge (Aria)
-            Module 3 — Reviews & Reputation
-            Growth Package (Modules 1+3)
-            Full Suite (All 4 Modules)
-          
-MESSAGE (OPTIONAL)
-SEND MESSAGE →
-✦ LUXE OPS
-© 2026 LUXE OPS — AI Hospitality Solutions. Morocco.
-SOLUTION
-MODULES
-PRICING
-LIVE DEMO
-CONTACT
-
-Chat with us
+Always invite them to book a free 30-min demo via WhatsApp or email.`;
+let loHistory=[];
+let loOpen=false;
+let loInit=false;
+function loToggle(){
+  const w=document.getElementById('lo-win');
+  loOpen=!loOpen;
+  w.classList.toggle('open',loOpen);
+  if(loOpen&&!loInit){loInit=true;loAddMsg("Welcome to LUXE OPS! 👋 I'm here to help you automate your hotel with AI. What would you like to know?","bot");}
+}
+function loAddMsg(text,role){
+  const box=document.getElementById('lo-msgs');
+  const d=document.createElement('div');
+  d.className='lo-msg '+role;
+  d.innerHTML=`<div class="lo-mav">${role==='bot'?'L':'U'}</div><div class="lo-bbl">${text.replace(/\n/g,'<br>')}</div>`;
+  box.appendChild(d);
+  box.scrollTop=box.scrollHeight;
+  loHistory.push({role:role==='bot'?'assistant':'user',content:text});
+}
+function loShowTyping(){
+  const box=document.getElementById('lo-msgs');
+  const d=document.createElement('div');
+  d.className='lo-msg bot';d.id='lo-typ';
+  d.innerHTML=`<div class="lo-mav">L</div><div class="lo-bbl"><div class="lo-typing"><div class="lo-td"></div><div class="lo-td"></div><div class="lo-td"></div></div></div>`;
+  box.appendChild(d);box.scrollTop=box.scrollHeight;
+}
+async function loAsk(text){
+  document.getElementById('lo-qr').style.display='none';
+  loAddMsg(text,'user');
+  loShowTyping();
+  try{
+    const msgs=loHistory.slice(-10);
+    const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:300,system:LO_SYSTEM,messages:msgs})});
+    const data=await res.json();
+    document.getElementById('lo-typ')?.remove();
+    const reply=data.content?.[0]?.text||"Please reach us at kerrouch@luxeops.it.com or WhatsApp +212 699 072 698!";
+    loAddMsg(reply,'bot');
+  }catch(e){
+    document.getElementById('lo-typ')?.remove();
+    loAddMsg("Please reach us at kerrouch@luxeops.it.com or WhatsApp +212 699 072 698!","bot");
+  }
+}
+function loSend(){
+  const ci=document.getElementById('lo-ci');
+  const text=ci.value.trim();
+  if(!text)return;
+  ci.value='';
+  loAsk(text);
+}
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20);});
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+function handleSubmit(){
+  const btn=document.querySelector('.form-submit');
+  btn.textContent='Sending...';btn.disabled=true;
+  setTimeout(()=>{btn.textContent='Message Sent ✓';btn.style.background='#4CAF50';
+  setTimeout(()=>{btn.textContent='Send Message →';btn.style.background='';btn.disabled=false;},3000);},1200);
+}
+</script>
+</body>
+</html>
