@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
@@ -151,12 +152,12 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
 .fade-up.visible{opacity:1;transform:none}
 @media(max-width:768px){.nav-links{display:none}.hero-stats{gap:2rem}}
-#lo-btn{position:fixed;bottom:28px;right:28px;background:var(--gold);color:var(--dark);border:none;border-radius:50px;padding:13px 22px;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;z-index:9999;display:flex;align-items:center;gap:8px;letter-spacing:.5px;box-shadow:0 4px 24px rgba(201,168,76,.35);transition:all .2s}
-#lo-btn:hover{background:var(--gold-l);transform:translateY(-2px)}
-#lo-win{position:fixed;bottom:88px;right:28px;width:360px;max-height:520px;background:#07060A;border:1px solid rgba(201,168,76,.3);border-radius:16px;display:none;flex-direction:column;z-index:9998;box-shadow:0 16px 48px rgba(0,0,0,.5);font-family:'DM Sans',sans-serif;overflow:hidden}
+#lo-btn{position:fixed;bottom:28px;right:28px;background:var(–gold);color:var(–dark);border:none;border-radius:50px;padding:13px 22px;font-size:13px;font-weight:500;font-family:‘DM Sans’,sans-serif;cursor:pointer;z-index:9999;display:flex;align-items:center;gap:8px;letter-spacing:.5px;box-shadow:0 4px 24px rgba(201,168,76,.35);transition:all .2s}
+#lo-btn:hover{background:var(–gold-l);transform:translateY(-2px)}
+#lo-win{position:fixed;bottom:88px;right:28px;width:360px;max-height:520px;background:#07060A;border:1px solid rgba(201,168,76,.3);border-radius:16px;display:none;flex-direction:column;z-index:9998;box-shadow:0 16px 48px rgba(0,0,0,.5);font-family:‘DM Sans’,sans-serif;overflow:hidden}
 #lo-win.open{display:flex}
 #lo-head{background:#0F0D14;border-bottom:1px solid rgba(201,168,76,.15);padding:12px 14px;display:flex;align-items:center;gap:10px}
-.lo-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#E8C870);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:15px;color:#07060A;font-weight:600;flex-shrink:0}
+.lo-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#E8C870);display:flex;align-items:center;justify-content:center;font-family:‘Cormorant Garamond’,serif;font-size:15px;color:#07060A;font-weight:600;flex-shrink:0}
 .lo-info{flex:1}
 .lo-name{font-size:13px;font-weight:500;color:#fff}
 .lo-status{font-size:10px;color:#4CAF50;display:flex;align-items:center;gap:3px}
@@ -168,21 +169,22 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
 .lo-mav{width:24px;height:24px;border-radius:50%;background:rgba(201,168,76,.15);display:flex;align-items:center;justify-content:center;font-size:10px;color:#C9A84C;flex-shrink:0}
 .lo-bbl{max-width:82%;padding:8px 11px;border-radius:13px;font-size:12.5px;line-height:1.55}
 .lo-msg.bot .lo-bbl{background:#1A1622;color:rgba(255,255,255,.82);border-bottom-left-radius:3px;border:1px solid rgba(201,168,76,.12)}
-.lo-msg.user .lo-bbl{background:var(--gold);color:#07060A;border-bottom-right-radius:3px}
+.lo-msg.user .lo-bbl{background:var(–gold);color:#07060A;border-bottom-right-radius:3px}
 .lo-typing{display:flex;gap:3px;align-items:center;padding:6px 8px}
 .lo-td{width:5px;height:5px;border-radius:50%;background:#C9A84C;animation:loTyp 1.2s infinite}
 .lo-td:nth-child(2){animation-delay:.2s}.lo-td:nth-child(3){animation-delay:.4s}
 @keyframes loTyp{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
 #lo-qr{display:flex;gap:5px;flex-wrap:wrap;padding:0 10px 6px}
-.lo-qrb{background:transparent;border:1px solid rgba(201,168,76,.25);border-radius:100px;padding:4px 11px;font-size:10px;color:#C9A84C;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .15s}
+.lo-qrb{background:transparent;border:1px solid rgba(201,168,76,.25);border-radius:100px;padding:4px 11px;font-size:10px;color:#C9A84C;cursor:pointer;font-family:‘DM Sans’,sans-serif;transition:background .15s}
 .lo-qrb:hover{background:rgba(201,168,76,.1)}
 #lo-input{border-top:1px solid rgba(201,168,76,.12);padding:10px 12px;display:flex;gap:7px;align-items:center;background:#0F0D14}
-#lo-ci{flex:1;background:#1A1622;border:1px solid rgba(201,168,76,.18);border-radius:100px;padding:8px 14px;font-size:12px;color:rgba(255,255,255,.78);font-family:'DM Sans',sans-serif;outline:none}
+#lo-ci{flex:1;background:#1A1622;border:1px solid rgba(201,168,76,.18);border-radius:100px;padding:8px 14px;font-size:12px;color:rgba(255,255,255,.78);font-family:‘DM Sans’,sans-serif;outline:none}
 #lo-ci:focus{border-color:rgba(201,168,76,.4)}
-#lo-send{width:34px;height:34px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
+#lo-send{width:34px;height:34px;border-radius:50%;background:var(–gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
 #lo-send:hover{background:#E8C870}
 #lo-powered{text-align:center;font-size:9px;color:rgba(255,255,255,.18);padding:5px;background:#07060A;letter-spacing:.5px}
 </style>
+
 </head>
 <body>
 <nav id="nav">
@@ -237,7 +239,7 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
     </div>
     <div class="modules-grid fade-up">
       <div class="module-card"><div class="m-num">01</div><div class="m-sub">AI Concierge</div><div class="m-title">Aria — Guest Concierge</div><div class="m-desc">A fully branded AI concierge trained on your hotel — answering guests instantly in 4 languages, around the clock.</div><ul class="m-features"><li>24/7 chat on your website</li><li>Room, dining & spa inquiries</li><li>English, French, Arabic, Spanish</li><li>Booking assistance & FAQ</li><li>Intent detection & logging</li></ul></div>
-      <div class="module-card"><div class="m-num">02</div><div class="m-sub">Operations</div><div class="m-title">Staff Operations AI</div><div class="m-desc">Automate housekeeping, maintenance, and staff communication so your team focuses on what matters most.</div><ul class="m-features"><li>Auto housekeeping task routing</li><li>Maintenance ticket creation</li><li>Daily staff briefings</li><li>Shift reminders & alerts</li><li>Slack & WhatsApp integration</li></ul></div>
+      <a href="/staff-ops.html" style="text-decoration:none;color:inherit;display:block"><div class="module-card" style="cursor:pointer"><div style="display:inline-flex;align-items:center;gap:5px;background:rgba(76,175,80,.12);border:1px solid rgba(76,175,80,.3);border-radius:100px;padding:3px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#4CAF50;margin-bottom:.8rem"><span style="width:5px;height:5px;border-radius:50%;background:#4CAF50;display:inline-block;animation:pulse 2s infinite"></span> Live Product</div><div class="m-num">02</div><div class="m-sub">Operations</div><div class="m-title">Staff Operations AI</div><div class="m-desc">Automate housekeeping, maintenance, and staff communication so your team focuses on what matters most.</div><ul class="m-features"><li>Auto housekeeping task routing</li><li>Maintenance ticket creation</li><li>Daily staff briefings</li><li>Shift reminders &amp; alerts</li><li>Slack &amp; WhatsApp integration</li></ul><div style="display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#C9A84C;margin-top:1rem">Explore Module →</div></div></a>
       <div class="module-card"><div class="m-num">03</div><div class="m-sub">Reputation</div><div class="m-title">Reviews & Marketing AI</div><div class="m-desc">Monitor every review, auto-respond professionally, and turn happy guests into repeat customers.</div><ul class="m-features"><li>Auto review requests post-stay</li><li>AI-drafted personalized replies</li><li>Sentiment analysis & reports</li><li>Upsell campaigns to past guests</li><li>Google & TripAdvisor monitoring</li></ul></div>
       <div class="module-card"><div class="m-num">04</div><div class="m-sub">Finance</div><div class="m-title">Payments & Invoicing AI</div><div class="m-desc">Automate billing, follow up on unpaid invoices, and get weekly revenue insights without lifting a finger.</div><ul class="m-features"><li>Auto invoice generation</li><li>Payment reminders & follow-ups</li><li>Weekly revenue reports</li><li>No-show & refund alerts</li><li>Stripe & PayPal integration</li></ul></div>
     </div>
@@ -313,67 +315,70 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
     </div>
     <div class="work-grid fade-up">
 
-      <!-- CARD 1: PINK CACTUS -->
-      <div class="work-card">
-        <div class="work-card-img">
-          <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt="Pink Cactus Marrakech — Pool Club & Boutique Stay"/>
-          <div class="work-card-overlay"></div>
-          <span class="work-card-tag">Live</span>
-          <a class="work-card-visit" href="https://pinkcactus-qnn93bjj.manus.space/" target="_blank">→ Visit Site</a>
-        </div>
-        <div class="work-card-body">
-          <div class="work-card-sub">Pool Club &amp; Boutique Stay · Marrakech</div>
-          <div class="work-card-title">Pink Cactus</div>
-          <p class="work-card-desc">A full-stack booking website for a luxury pool club and boutique stay in Marrakech. Features an AI concierge (Aria), online reservations, gallery, pricing, and guest testimonials — all in a premium, mobile-first design.</p>
-          <div class="work-card-tags">
-            <span class="work-tag">AI Concierge</span>
-            <span class="work-tag">Booking System</span>
-            <span class="work-tag">Luxury Design</span>
-            <span class="work-tag">Morocco</span>
-          </div>
-          <div class="work-card-footer">
-            <span class="work-card-client">Client: Pink Cactus Marrakech</span>
-            <a class="work-card-link" href="https://pinkcactus-qnn93bjj.manus.space/" target="_blank">
-              View Live
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- CARD 2: ARIA JNAN PALACE (Live Demo) -->
-      <div class="work-card">
-        <div class="work-card-img">
-          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Aria — AI Concierge Demo for Jnan Palace Fès"/>
-          <div class="work-card-overlay"></div>
-          <span class="work-card-tag">Live Demo</span>
-          <a class="work-card-visit" href="https://ops-kerr.netlify.app" target="_blank">→ Visit Site</a>
-        </div>
-        <div class="work-card-body">
-          <div class="work-card-sub">AI Concierge Demo · Fès, Morocco</div>
-          <div class="work-card-title">Aria — Jnan Palace</div>
-          <p class="work-card-desc">A fully functional AI concierge demo built on a 5-star reference hotel in Fès. Demonstrates real-time multilingual guest communication, booking assistance, and intent detection — powered by LUXE OPS Module 1.</p>
-          <div class="work-card-tags">
-            <span class="work-tag">AI Concierge</span>
-            <span class="work-tag">Multilingual</span>
-            <span class="work-tag">5-Star Hotel</span>
-            <span class="work-tag">Fès</span>
-          </div>
-          <div class="work-card-footer">
-            <span class="work-card-client">Reference: Jnan Palace Fès</span>
-            <a class="work-card-link" href="https://ops-kerr.netlify.app" target="_blank">
-              View Live
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
+```
+  <!-- CARD 1: PINK CACTUS -->
+  <div class="work-card">
+    <div class="work-card-img">
+      <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt="Pink Cactus Marrakech — Pool Club & Boutique Stay"/>
+      <div class="work-card-overlay"></div>
+      <span class="work-card-tag">Live</span>
+      <a class="work-card-visit" href="https://pinkcactus-qnn93bjj.manus.space/" target="_blank">→ Visit Site</a>
     </div>
-    <div class="work-more fade-up">
-      <p>More projects coming soon — each one powered by LUXE OPS AI.</p>
-      <a class="btn-ghost" href="#contact">Build Your Product →</a>
+    <div class="work-card-body">
+      <div class="work-card-sub">Pool Club &amp; Boutique Stay · Marrakech</div>
+      <div class="work-card-title">Pink Cactus</div>
+      <p class="work-card-desc">A full-stack booking website for a luxury pool club and boutique stay in Marrakech. Features an AI concierge (Aria), online reservations, gallery, pricing, and guest testimonials — all in a premium, mobile-first design.</p>
+      <div class="work-card-tags">
+        <span class="work-tag">AI Concierge</span>
+        <span class="work-tag">Booking System</span>
+        <span class="work-tag">Luxury Design</span>
+        <span class="work-tag">Morocco</span>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-card-client">Client: Pink Cactus Marrakech</span>
+        <a class="work-card-link" href="https://pinkcactus-qnn93bjj.manus.space/" target="_blank">
+          View Live
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
     </div>
+  </div>
+
+  <!-- CARD 2: ARIA JNAN PALACE (Live Demo) -->
+  <div class="work-card">
+    <div class="work-card-img">
+      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Aria — AI Concierge Demo for Jnan Palace Fès"/>
+      <div class="work-card-overlay"></div>
+      <span class="work-card-tag">Live Demo</span>
+      <a class="work-card-visit" href="https://ops-kerr.netlify.app" target="_blank">→ Visit Site</a>
+    </div>
+    <div class="work-card-body">
+      <div class="work-card-sub">AI Concierge Demo · Fès, Morocco</div>
+      <div class="work-card-title">Aria — Jnan Palace</div>
+      <p class="work-card-desc">A fully functional AI concierge demo built on a 5-star reference hotel in Fès. Demonstrates real-time multilingual guest communication, booking assistance, and intent detection — powered by LUXE OPS Module 1.</p>
+      <div class="work-card-tags">
+        <span class="work-tag">AI Concierge</span>
+        <span class="work-tag">Multilingual</span>
+        <span class="work-tag">5-Star Hotel</span>
+        <span class="work-tag">Fès</span>
+      </div>
+      <div class="work-card-footer">
+        <span class="work-card-client">Reference: Jnan Palace Fès</span>
+        <a class="work-card-link" href="https://ops-kerr.netlify.app" target="_blank">
+          View Live
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="work-more fade-up">
+  <p>More projects coming soon — each one powered by LUXE OPS AI.</p>
+  <a class="btn-ghost" href="#contact">Build Your Product →</a>
+</div>
+```
+
   </div>
 </section>
 
