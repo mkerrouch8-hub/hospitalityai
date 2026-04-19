@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "name": "luxeops-staff-ops",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "regions": ["cdg1"],
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": "https://ajaflqcxjnxjaqcifzdj.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_u-rK-eUdRWv3Fa0IbUWeBg_Nbv2IBrb",
+    "NEXT_PUBLIC_APP_URL": "https://staff.luxeops.it.com",
+    "NODE_ENV": "production"
+  }
+}
