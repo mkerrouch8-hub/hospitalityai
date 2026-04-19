@@ -1,41 +1,7 @@
 {
+  "version": 2,
   "buildCommand": "npm run build",
   "outputDirectory": ".next",
   "installCommand": "npm install",
-  "framework": "nextjs",
-  "regions": [
-    "cdg1"
-  ],
-  "env": [
-    {
-      "key": "NEXT_PUBLIC_SUPABASE_URL",
-      "value": "https://ajaflqcxjnxjaqcifzdj.supabase.co",
-      "target": [
-        "production",
-        "preview"
-      ]
-    },
-    {
-      "key": "NEXT_PUBLIC_SUPABASE_ANON_KEY",
-      "value": "sb_publishable_u-rK-eUdRWv3Fa0IbUWeBg_Nbv2IBrb",
-      "target": [
-        "production",
-        "preview"
-      ]
-    },
-    {
-      "key": "NEXT_PUBLIC_APP_URL",
-      "value": "https://staff.luxeops.it.com",
-      "target": [
-        "production"
-      ]
-    },
-    {
-      "key": "NODE_ENV",
-      "value": "production",
-      "target": [
-        "production"
-      ]
-    }
-  ]
+  "framework": "nextjs"
 }
