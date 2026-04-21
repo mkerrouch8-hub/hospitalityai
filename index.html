@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>LUXE OPS — AI Hospitality Solutions</title>
+
+<!-- Security: Content Security Policy -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self' https://mohammedkerr.app.n8n.cloud https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
@@ -124,7 +130,7 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
 /* ===== OUR WORK SECTION ===== */
 .work{background:var(--dark)}
 .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem;margin-top:3rem}
-.work-card{background:var(--dark-2);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .3s;position:relative;group}
+.work-card{background:var(--dark-2);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .3s;position:relative}
 .work-card:hover{border-color:var(--border-h);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.4)}
 .work-card-img{position:relative;overflow:hidden;height:220px}
 .work-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
@@ -148,16 +154,17 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
 .work-card-link:hover svg{transform:translateX(3px)}
 .work-more{text-align:center;margin-top:3rem}
 .work-more p{font-size:14px;color:var(--muted);margin-bottom:1.2rem}
-
 .fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
 .fade-up.visible{opacity:1;transform:none}
 @media(max-width:768px){.nav-links{display:none}.hero-stats{gap:2rem}}
-#lo-btn{position:fixed;bottom:28px;right:28px;background:var(–gold);color:var(–dark);border:none;border-radius:50px;padding:13px 22px;font-size:13px;font-weight:500;font-family:‘DM Sans’,sans-serif;cursor:pointer;z-index:9999;display:flex;align-items:center;gap:8px;letter-spacing:.5px;box-shadow:0 4px 24px rgba(201,168,76,.35);transition:all .2s}
-#lo-btn:hover{background:var(–gold-l);transform:translateY(-2px)}
-#lo-win{position:fixed;bottom:88px;right:28px;width:360px;max-height:520px;background:#07060A;border:1px solid rgba(201,168,76,.3);border-radius:16px;display:none;flex-direction:column;z-index:9998;box-shadow:0 16px 48px rgba(0,0,0,.5);font-family:‘DM Sans’,sans-serif;overflow:hidden}
+
+/* ===== CHAT WIDGET ===== */
+#lo-btn{position:fixed;bottom:28px;right:28px;background:var(--gold);color:var(--dark);border:none;border-radius:50px;padding:13px 22px;font-size:13px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;z-index:9999;display:flex;align-items:center;gap:8px;letter-spacing:.5px;box-shadow:0 4px 24px rgba(201,168,76,.35);transition:all .2s}
+#lo-btn:hover{background:var(--gold-l);transform:translateY(-2px)}
+#lo-win{position:fixed;bottom:88px;right:28px;width:360px;max-height:520px;background:#07060A;border:1px solid rgba(201,168,76,.3);border-radius:16px;display:none;flex-direction:column;z-index:9998;box-shadow:0 16px 48px rgba(0,0,0,.5);font-family:'DM Sans',sans-serif;overflow:hidden}
 #lo-win.open{display:flex}
 #lo-head{background:#0F0D14;border-bottom:1px solid rgba(201,168,76,.15);padding:12px 14px;display:flex;align-items:center;gap:10px}
-.lo-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#E8C870);display:flex;align-items:center;justify-content:center;font-family:‘Cormorant Garamond’,serif;font-size:15px;color:#07060A;font-weight:600;flex-shrink:0}
+.lo-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#C9A84C,#E8C870);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:15px;color:#07060A;font-weight:600;flex-shrink:0}
 .lo-info{flex:1}
 .lo-name{font-size:13px;font-weight:500;color:#fff}
 .lo-status{font-size:10px;color:#4CAF50;display:flex;align-items:center;gap:3px}
@@ -169,24 +176,27 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
 .lo-mav{width:24px;height:24px;border-radius:50%;background:rgba(201,168,76,.15);display:flex;align-items:center;justify-content:center;font-size:10px;color:#C9A84C;flex-shrink:0}
 .lo-bbl{max-width:82%;padding:8px 11px;border-radius:13px;font-size:12.5px;line-height:1.55}
 .lo-msg.bot .lo-bbl{background:#1A1622;color:rgba(255,255,255,.82);border-bottom-left-radius:3px;border:1px solid rgba(201,168,76,.12)}
-.lo-msg.user .lo-bbl{background:var(–gold);color:#07060A;border-bottom-right-radius:3px}
+.lo-msg.user .lo-bbl{background:var(--gold);color:#07060A;border-bottom-right-radius:3px}
 .lo-typing{display:flex;gap:3px;align-items:center;padding:6px 8px}
 .lo-td{width:5px;height:5px;border-radius:50%;background:#C9A84C;animation:loTyp 1.2s infinite}
 .lo-td:nth-child(2){animation-delay:.2s}.lo-td:nth-child(3){animation-delay:.4s}
 @keyframes loTyp{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
 #lo-qr{display:flex;gap:5px;flex-wrap:wrap;padding:0 10px 6px}
-.lo-qrb{background:transparent;border:1px solid rgba(201,168,76,.25);border-radius:100px;padding:4px 11px;font-size:10px;color:#C9A84C;cursor:pointer;font-family:‘DM Sans’,sans-serif;transition:background .15s}
+.lo-qrb{background:transparent;border:1px solid rgba(201,168,76,.25);border-radius:100px;padding:4px 11px;font-size:10px;color:#C9A84C;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .15s}
 .lo-qrb:hover{background:rgba(201,168,76,.1)}
 #lo-input{border-top:1px solid rgba(201,168,76,.12);padding:10px 12px;display:flex;gap:7px;align-items:center;background:#0F0D14}
-#lo-ci{flex:1;background:#1A1622;border:1px solid rgba(201,168,76,.18);border-radius:100px;padding:8px 14px;font-size:12px;color:rgba(255,255,255,.78);font-family:‘DM Sans’,sans-serif;outline:none}
+#lo-ci{flex:1;background:#1A1622;border:1px solid rgba(201,168,76,.18);border-radius:100px;padding:8px 14px;font-size:12px;color:rgba(255,255,255,.78);font-family:'DM Sans',sans-serif;outline:none}
 #lo-ci:focus{border-color:rgba(201,168,76,.4)}
-#lo-send{width:34px;height:34px;border-radius:50%;background:var(–gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
+#lo-send{width:34px;height:34px;border-radius:50%;background:var(--gold);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
 #lo-send:hover{background:#E8C870}
 #lo-powered{text-align:center;font-size:9px;color:rgba(255,255,255,.18);padding:5px;background:#07060A;letter-spacing:.5px}
-</style>
 
+/* ===== SECURITY: honeypot field ===== */
+.hp-field{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden;pointer-events:none}
+</style>
 </head>
 <body>
+
 <nav id="nav">
   <a class="nav-logo" href="#">✦ LUXE OPS</a>
   <ul class="nav-links">
@@ -198,6 +208,7 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
   </ul>
   <a class="nav-cta" href="#contact">Book a Demo</a>
 </nav>
+
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -215,6 +226,7 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
     <div class="hero-stat"><div class="num">90%</div><div class="lbl">Less Manual Work</div></div>
   </div>
 </section>
+
 <section class="problem" id="solution">
   <div class="container">
     <div class="fade-up">
@@ -230,6 +242,7 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
     </div>
   </div>
 </section>
+
 <section id="modules">
   <div class="container">
     <div class="fade-up">
@@ -238,19 +251,45 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
       <p class="section-sub">Each module solves a specific hospitality challenge. Use one — or combine all four for total automation.</p>
     </div>
     <div class="modules-grid fade-up">
-      <div class="module-card"><div class="m-num">01</div><div class="m-sub">AI Concierge</div><div class="m-title">Aria — Guest Concierge</div><div class="m-desc">A fully branded AI concierge trained on your hotel — answering guests instantly in 4 languages, around the clock.</div><ul class="m-features"><li>24/7 chat on your website</li><li>Room, dining & spa inquiries</li><li>English, French, Arabic, Spanish</li><li>Booking assistance & FAQ</li><li>Intent detection & logging</li></ul></div>
-      <a href="https://staff.luxeops.it.com" style="text-decoration:none;color:inherit;display:block"><div class="module-card" style="cursor:pointer"><div style="display:inline-flex;align-items:center;gap:5px;background:rgba(76,175,80,.12);border:1px solid rgba(76,175,80,.3);border-radius:100px;padding:3px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#4CAF50;margin-bottom:.8rem"><span style="width:5px;height:5px;border-radius:50%;background:#4CAF50;display:inline-block;animation:pulse 2s infinite"></span> Live Product</div><div class="m-num">02</div><div class="m-sub">Operations</div><div class="m-title">Staff Operations AI</div><div class="m-desc">Automate housekeeping, maintenance, and staff communication so your team focuses on what matters most.</div><ul class="m-features"><li>Auto housekeeping task routing</li><li>Maintenance ticket creation</li><li>Daily staff briefings</li><li>Shift reminders &amp; alerts</li><li>Slack &amp; WhatsApp integration</li></ul><div style="display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#C9A84C;margin-top:1rem">Explore Module →</div></div></a>
-      <div class="module-card"><div class="m-num">03</div><div class="m-sub">Reputation</div><div class="m-title">Reviews & Marketing AI</div><div class="m-desc">Monitor every review, auto-respond professionally, and turn happy guests into repeat customers.</div><ul class="m-features"><li>Auto review requests post-stay</li><li>AI-drafted personalized replies</li><li>Sentiment analysis & reports</li><li>Upsell campaigns to past guests</li><li>Google & TripAdvisor monitoring</li></ul></div>
-      <div class="module-card"><div class="m-num">04</div><div class="m-sub">Finance</div><div class="m-title">Payments & Invoicing AI</div><div class="m-desc">Automate billing, follow up on unpaid invoices, and get weekly revenue insights without lifting a finger.</div><ul class="m-features"><li>Auto invoice generation</li><li>Payment reminders & follow-ups</li><li>Weekly revenue reports</li><li>No-show & refund alerts</li><li>Stripe & PayPal integration</li></ul></div>
+      <div class="module-card">
+        <div class="m-num">01</div><div class="m-sub">AI Concierge</div>
+        <div class="m-title">Aria — Guest Concierge</div>
+        <div class="m-desc">A fully branded AI concierge trained on your hotel — answering guests instantly in 4 languages, around the clock.</div>
+        <ul class="m-features"><li>24/7 chat on your website</li><li>Room, dining &amp; spa inquiries</li><li>English, French, Arabic, Spanish</li><li>Booking assistance &amp; FAQ</li><li>Intent detection &amp; logging</li></ul>
+      </div>
+      <a href="https://staff.luxeops.it.com" style="text-decoration:none;color:inherit;display:block">
+        <div class="module-card" style="cursor:pointer">
+          <div style="display:inline-flex;align-items:center;gap:5px;background:rgba(76,175,80,.12);border:1px solid rgba(76,175,80,.3);border-radius:100px;padding:3px 10px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#4CAF50;margin-bottom:.8rem"><span style="width:5px;height:5px;border-radius:50%;background:#4CAF50;display:inline-block;animation:pulse 2s infinite"></span> Live Product</div>
+          <div class="m-num">02</div><div class="m-sub">Operations</div>
+          <div class="m-title">Staff Operations AI</div>
+          <div class="m-desc">Automate housekeeping, maintenance, and staff communication so your team focuses on what matters most.</div>
+          <ul class="m-features"><li>Auto housekeeping task routing</li><li>Maintenance ticket creation</li><li>Daily staff briefings</li><li>Shift reminders &amp; alerts</li><li>Slack &amp; WhatsApp integration</li></ul>
+          <div style="display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#C9A84C;margin-top:1rem">Explore Module →</div>
+        </div>
+      </a>
+      <div class="module-card">
+        <div class="m-num">03</div><div class="m-sub">Reputation</div>
+        <div class="m-title">Reviews &amp; Marketing AI</div>
+        <div class="m-desc">Monitor every review, auto-respond professionally, and turn happy guests into repeat customers.</div>
+        <ul class="m-features"><li>Auto review requests post-stay</li><li>AI-drafted personalized replies</li><li>Sentiment analysis &amp; reports</li><li>Upsell campaigns to past guests</li><li>Google &amp; TripAdvisor monitoring</li></ul>
+      </div>
+      <div class="module-card">
+        <div class="m-num">04</div><div class="m-sub">Finance</div>
+        <div class="m-title">Payments &amp; Invoicing AI</div>
+        <div class="m-desc">Automate billing, follow up on unpaid invoices, and get weekly revenue insights without lifting a finger.</div>
+        <ul class="m-features"><li>Auto invoice generation</li><li>Payment reminders &amp; follow-ups</li><li>Weekly revenue reports</li><li>No-show &amp; refund alerts</li><li>Stripe &amp; PayPal integration</li></ul>
+      </div>
     </div>
   </div>
 </section>
+
 <div class="demo-strip fade-up">
   <div class="section-label" style="text-align:center;margin-bottom:.8rem">Live Demo</div>
   <h2>See Aria in Action — Right Now</h2>
   <p>Explore our fully functional AI concierge demo, built on a 5-star reference hotel in Fès, Morocco.</p>
   <a class="demo-link" href="https://ops-kerr.netlify.app" target="_blank"><span>→</span> Open Live Demo</a>
 </div>
+
 <section class="pricing" id="pricing">
   <div class="container">
     <div class="fade-up" style="text-align:center">
@@ -275,7 +314,7 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
         <div class="price-period">/ month</div>
         <div class="price-usd">≈ $400 USD / month</div>
         <div class="price-setup">+ Setup: 5,000 MAD (one-time)</div>
-        <ul class="price-features"><li>Modules 1 + 3 — Concierge & Reviews</li><li>AI review monitoring & replies</li><li>Google & TripAdvisor tracking</li><li>Monthly performance report</li><li>Priority support</li></ul>
+        <ul class="price-features"><li>Modules 1 + 3 — Concierge &amp; Reviews</li><li>AI review monitoring &amp; replies</li><li>Google &amp; TripAdvisor tracking</li><li>Monthly performance report</li><li>Priority support</li></ul>
         <a class="price-btn" href="#contact">Get Started</a>
       </div>
       <div class="price-card">
@@ -284,12 +323,13 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
         <div class="price-period">/ month</div>
         <div class="price-usd">≈ $750 USD / month</div>
         <div class="price-setup">+ Setup: 8,000 MAD (one-time)</div>
-        <ul class="price-features"><li>All 4 Modules — Complete System</li><li>Staff operations automation</li><li>Payments & invoicing AI</li><li>Dedicated account manager</li><li>24/7 priority support</li></ul>
+        <ul class="price-features"><li>All 4 Modules — Complete System</li><li>Staff operations automation</li><li>Payments &amp; invoicing AI</li><li>Dedicated account manager</li><li>24/7 priority support</li></ul>
         <a class="price-btn" href="#contact">Get Started</a>
       </div>
     </div>
   </div>
 </section>
+
 <section id="targets">
   <div class="container">
     <div class="fade-up" style="text-align:center">
@@ -298,14 +338,15 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
     </div>
     <div class="targets-grid fade-up">
       <div class="target-card"><div class="t-icon">🏨</div><div class="t-name">Hotels</div><div class="t-desc">3★ to 5★, all sizes</div></div>
-      <div class="target-card"><div class="t-icon">🍽️</div><div class="t-name">Restaurants</div><div class="t-desc">Fine dining & casual</div></div>
-      <div class="target-card"><div class="t-icon">🏰</div><div class="t-name">Riads</div><div class="t-desc">Boutique & luxury</div></div>
-      <div class="target-card"><div class="t-icon">🏖️</div><div class="t-name">Resorts</div><div class="t-desc">Beach & spa wellness</div></div>
-      <div class="target-card"><div class="t-icon">🛎️</div><div class="t-name">Guesthouses</div><div class="t-desc">B&Bs & boutique stays</div></div>
-      <div class="target-card"><div class="t-icon">🎪</div><div class="t-name">Event Venues</div><div class="t-desc">Weddings & conferences</div></div>
+      <div class="target-card"><div class="t-icon">🍽️</div><div class="t-name">Restaurants</div><div class="t-desc">Fine dining &amp; casual</div></div>
+      <div class="target-card"><div class="t-icon">🏰</div><div class="t-name">Riads</div><div class="t-desc">Boutique &amp; luxury</div></div>
+      <div class="target-card"><div class="t-icon">🏖️</div><div class="t-name">Resorts</div><div class="t-desc">Beach &amp; spa wellness</div></div>
+      <div class="target-card"><div class="t-icon">🛎️</div><div class="t-name">Guesthouses</div><div class="t-desc">B&amp;Bs &amp; boutique stays</div></div>
+      <div class="target-card"><div class="t-icon">🎪</div><div class="t-name">Event Venues</div><div class="t-desc">Weddings &amp; conferences</div></div>
     </div>
   </div>
 </section>
+
 <section class="work" id="work">
   <div class="container">
     <div class="fade-up">
@@ -314,71 +355,47 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
       <p class="section-sub">Real-world AI-powered hospitality experiences, designed and deployed by LUXE OPS for forward-thinking brands.</p>
     </div>
     <div class="work-grid fade-up">
-
-```
-  <!-- CARD 1: PINK CACTUS -->
-  <div class="work-card">
-    <div class="work-card-img">
-      <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt="Pink Cactus Marrakech — Pool Club & Boutique Stay"/>
-      <div class="work-card-overlay"></div>
-      <span class="work-card-tag">Live</span>
-      <a class="work-card-visit" href="https://pinkcactus-qnn93bjj.manus.space/" target="_blank">→ Visit Site</a>
-    </div>
-    <div class="work-card-body">
-      <div class="work-card-sub">Pool Club &amp; Boutique Stay · Marrakech</div>
-      <div class="work-card-title">Pink Cactus</div>
-      <p class="work-card-desc">A full-stack booking website for a luxury pool club and boutique stay in Marrakech. Features an AI concierge (Aria), online reservations, gallery, pricing, and guest testimonials — all in a premium, mobile-first design.</p>
-      <div class="work-card-tags">
-        <span class="work-tag">AI Concierge</span>
-        <span class="work-tag">Booking System</span>
-        <span class="work-tag">Luxury Design</span>
-        <span class="work-tag">Morocco</span>
+      <div class="work-card">
+        <div class="work-card-img">
+          <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80" alt="Pink Cactus Marrakech"/>
+          <div class="work-card-overlay"></div>
+          <span class="work-card-tag">Live</span>
+          <a class="work-card-visit" href="https://pinkcactus-qnn93bjj.manus.space/" target="_blank" rel="noopener">→ Visit Site</a>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-sub">Pool Club &amp; Boutique Stay · Marrakech</div>
+          <div class="work-card-title">Pink Cactus</div>
+          <p class="work-card-desc">A full-stack booking website for a luxury pool club and boutique stay in Marrakech. Features an AI concierge (Aria), online reservations, gallery, pricing, and guest testimonials.</p>
+          <div class="work-card-tags"><span class="work-tag">AI Concierge</span><span class="work-tag">Booking System</span><span class="work-tag">Luxury Design</span><span class="work-tag">Morocco</span></div>
+          <div class="work-card-footer">
+            <span class="work-card-client">Client: Pink Cactus Marrakech</span>
+            <a class="work-card-link" href="https://pinkcactus-qnn93bjj.manus.space/" target="_blank" rel="noopener">View Live <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
       </div>
-      <div class="work-card-footer">
-        <span class="work-card-client">Client: Pink Cactus Marrakech</span>
-        <a class="work-card-link" href="https://pinkcactus-qnn93bjj.manus.space/" target="_blank">
-          View Live
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- CARD 2: ARIA JNAN PALACE (Live Demo) -->
-  <div class="work-card">
-    <div class="work-card-img">
-      <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Aria — AI Concierge Demo for Jnan Palace Fès"/>
-      <div class="work-card-overlay"></div>
-      <span class="work-card-tag">Live Demo</span>
-      <a class="work-card-visit" href="https://ops-kerr.netlify.app" target="_blank">→ Visit Site</a>
-    </div>
-    <div class="work-card-body">
-      <div class="work-card-sub">AI Concierge Demo · Fès, Morocco</div>
-      <div class="work-card-title">Aria — Jnan Palace</div>
-      <p class="work-card-desc">A fully functional AI concierge demo built on a 5-star reference hotel in Fès. Demonstrates real-time multilingual guest communication, booking assistance, and intent detection — powered by LUXE OPS Module 1.</p>
-      <div class="work-card-tags">
-        <span class="work-tag">AI Concierge</span>
-        <span class="work-tag">Multilingual</span>
-        <span class="work-tag">5-Star Hotel</span>
-        <span class="work-tag">Fès</span>
-      </div>
-      <div class="work-card-footer">
-        <span class="work-card-client">Reference: Jnan Palace Fès</span>
-        <a class="work-card-link" href="https://ops-kerr.netlify.app" target="_blank">
-          View Live
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <div class="work-card">
+        <div class="work-card-img">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80" alt="Aria — AI Concierge Demo Jnan Palace"/>
+          <div class="work-card-overlay"></div>
+          <span class="work-card-tag">Live Demo</span>
+          <a class="work-card-visit" href="https://ops-kerr.netlify.app" target="_blank" rel="noopener">→ Visit Site</a>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-sub">AI Concierge Demo · Fès, Morocco</div>
+          <div class="work-card-title">Aria — Jnan Palace</div>
+          <p class="work-card-desc">A fully functional AI concierge demo built on a 5-star reference hotel in Fès. Demonstrates real-time multilingual guest communication, booking assistance, and intent detection.</p>
+          <div class="work-card-tags"><span class="work-tag">AI Concierge</span><span class="work-tag">Multilingual</span><span class="work-tag">5-Star Hotel</span><span class="work-tag">Fès</span></div>
+          <div class="work-card-footer">
+            <span class="work-card-client">Reference: Jnan Palace Fès</span>
+            <a class="work-card-link" href="https://ops-kerr.netlify.app" target="_blank" rel="noopener">View Live <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-</div>
-<div class="work-more fade-up">
-  <p>More projects coming soon — each one powered by LUXE OPS AI.</p>
-  <a class="btn-ghost" href="#contact">Build Your Product →</a>
-</div>
-```
-
+    <div class="work-more fade-up">
+      <p>More projects coming soon — each one powered by LUXE OPS AI.</p>
+      <a class="btn-ghost" href="#contact">Build Your Product →</a>
+    </div>
   </div>
 </section>
 
@@ -395,21 +412,35 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
         <div class="contact-item"><div class="c-icon">📱</div><div><div class="c-label">WhatsApp</div><div class="c-val">+212 699 072 698</div></div></div>
         <div class="contact-item"><div class="c-icon">🌐</div><div><div class="c-label">Website</div><div class="c-val">www.luxeops.it.com</div></div></div>
         <div class="contact-item"><div class="c-icon">⚡</div><div><div class="c-label">Deployment</div><div class="c-val">Live in 48 hours after signing</div></div></div>
-        <a href="https://wa.me/212699072698" target="_blank" style="display:inline-flex;align-items:center;gap:10px;margin-top:1rem;text-decoration:none;background:var(--gold);color:var(--dark);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 28px;border-radius:3px;font-weight:500;font-family:'DM Sans',sans-serif;border:2px solid var(--gold-l);transition:all .2s;box-shadow:0 0 24px rgba(201,168,76,.25)">📱 Book Demo on WhatsApp</a>
+        <a href="https://wa.me/212699072698" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;margin-top:1rem;text-decoration:none;background:var(--gold);color:var(--dark);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:14px 28px;border-radius:3px;font-weight:500;font-family:'DM Sans',sans-serif;border:2px solid var(--gold-l);transition:all .2s;box-shadow:0 0 24px rgba(201,168,76,.25)">📱 Book Demo on WhatsApp</a>
       </div>
       <div class="contact-form">
-        <form id="luxe-form" action="https://formspree.io/f/xqewzlez" method="POST">
-          <div class="form-field"><label>Your Name</label><input type="text" name="name" required/></div>
-          <div class="form-field"><label>Hotel / Business Name</label><input type="text" name="hotel"/></div>
-          <div class="form-field"><label>Email Address</label><input type="email" name="email" required/></div>
-          <div class="form-field"><label>Interested In</label><select name="interest"><option value="">— Select a module —</option><option>Module 1 — AI Concierge (Aria)</option><option>Module 3 — Reviews & Reputation</option><option>Growth Package (Modules 1+3)</option><option>Full Suite (All 4 Modules)</option></select></div>
-          <div class="form-field"><label>Message (optional)</label><textarea name="message"></textarea></div>
+        <form id="luxe-form" novalidate>
+          <!-- HONEYPOT: invisible field — bots fill this, humans don't -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="hp_website">Leave this blank</label>
+            <input type="text" id="hp_website" name="website" tabindex="-1" autocomplete="off"/>
+          </div>
+          <div class="form-field"><label>Your Name</label><input type="text" id="f-name" name="name" required maxlength="100"/></div>
+          <div class="form-field"><label>Hotel / Business Name</label><input type="text" id="f-hotel" name="hotel" maxlength="150"/></div>
+          <div class="form-field"><label>Email Address</label><input type="email" id="f-email" name="email" required maxlength="254"/></div>
+          <div class="form-field"><label>Interested In</label>
+            <select id="f-interest" name="interest">
+              <option value="">— Select a module —</option>
+              <option>Module 1 — AI Concierge (Aria)</option>
+              <option>Module 3 — Reviews &amp; Reputation</option>
+              <option>Growth Package (Modules 1+3)</option>
+              <option>Full Suite (All 4 Modules)</option>
+            </select>
+          </div>
+          <div class="form-field"><label>Message (optional)</label><textarea id="f-message" name="message" maxlength="2000"></textarea></div>
           <button type="submit" class="form-submit">Send Message →</button>
         </form>
       </div>
     </div>
   </div>
 </section>
+
 <footer>
   <div class="footer-inner">
     <div>
@@ -420,12 +451,14 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
       <a href="#solution">Solution</a>
       <a href="#modules">Modules</a>
       <a href="#pricing">Pricing</a>
-      <a href="https://ops-kerr.netlify.app" target="_blank">Live Demo</a>
+      <a href="https://ops-kerr.netlify.app" target="_blank" rel="noopener">Live Demo</a>
       <a href="#work">Our Work</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
 </footer>
+
+<!-- CHAT WIDGET -->
 <button id="lo-btn" onclick="loToggle()">
   <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#07060A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
   Chat with us
@@ -454,70 +487,232 @@ footer{background:var(--dark-2);border-top:1px solid var(--border);padding:3rem 
   </div>
   <div id="lo-powered">Powered by LUXE OPS AI</div>
 </div>
+
 <script>
-const WEBHOOK='https://mohammedkerr.app.n8n.cloud/webhook/bf605270-3a13-4965-ade2-06c0dbe356db/chat';
-const SESSION='luxeops_'+Math.random().toString(36).substr(2,9);
-let loOpen=false;
-let loInit=false;
-function loToggle(){
-  const w=document.getElementById('lo-win');
-  loOpen=!loOpen;
-  w.classList.toggle('open',loOpen);
-  if(loOpen&&!loInit){loInit=true;loAddMsg("Welcome to LUXE OPS! 👋 I'm here to help you automate your hotel with AI. What would you like to know?","bot");}
+// ═══════════════════════════════════════════════
+// LUXE OPS — SECURITY + FUNCTIONALITY LAYER
+// ═══════════════════════════════════════════════
+
+// ── Config
+const WEBHOOK = 'https://mohammedkerr.app.n8n.cloud/webhook/bf605270-3a13-4965-ade2-06c0dbe356db/chat';
+const SESSION = 'lo_' + Math.random().toString(36).substr(2, 9);
+const FORM_ENDPOINT = 'https://formspree.io/f/xqewzlez';
+
+// ── Rate limiting: track last submission times
+const _lastSubmit = { chat: 0, form: 0 };
+const CHAT_COOLDOWN = 1500;   // 1.5s between chat messages
+const FORM_COOLDOWN = 15000;  // 15s between form submissions
+
+// ── Input sanitizer: strips HTML tags and dangerous patterns
+function sanitize(str) {
+  if (typeof str !== 'string') return '';
+  return str
+    .trim()
+    .replace(/[<>]/g, '')
+    .replace(/javascript:/gi, '')
+    .replace(/on\w+\s*=/gi, '')
+    .substring(0, 2000);
 }
-function loAddMsg(text,role){
-  const box=document.getElementById('lo-msgs');
-  const d=document.createElement('div');
-  d.className='lo-msg '+role;
-  d.innerHTML=`<div class="lo-mav">${role==='bot'?'L':'U'}</div><div class="lo-bbl">${text.replace(/\n/g,'<br>')}</div>`;
-  box.appendChild(d);
-  box.scrollTop=box.scrollHeight;
+
+// ── Email validator
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) && email.length <= 254;
 }
-function loShowTyping(){
-  const box=document.getElementById('lo-msgs');
-  const d=document.createElement('div');
-  d.className='lo-msg bot';d.id='lo-typ';
-  d.innerHTML=`<div class="lo-mav">L</div><div class="lo-bbl"><div class="lo-typing"><div class="lo-td"></div><div class="lo-td"></div><div class="lo-td"></div></div></div>`;
-  box.appendChild(d);box.scrollTop=box.scrollHeight;
+
+// ── Show field error
+function fieldError(el, msg) {
+  el.style.borderColor = '#E53935';
+  let e = el.parentNode.querySelector('.ferr');
+  if (!e) { e = document.createElement('span'); e.className = 'ferr'; e.style.cssText = 'color:#E53935;font-size:11px;margin-top:3px;display:block'; el.parentNode.appendChild(e); }
+  e.textContent = msg;
 }
-async function loAsk(text){
-  document.getElementById('lo-qr').style.display='none';
-  loAddMsg(text,'user');
-  loShowTyping();
-  try{
-    const res=await fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sessionId:SESSION,action:'sendMessage',chatInput:text})});
-    const data=await res.json();
-    document.getElementById('lo-typ')?.remove();
-    let reply=data.output||data.text||data.message||data.reply||'';
-    if(reply)reply=reply.replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>');
-    loAddMsg(reply||"How can I help you today?","bot");
-  }catch(e){
-    document.getElementById('lo-typ')?.remove();
-    loAddMsg("Please reach us at kerrouch@luxeops.it.com or WhatsApp +212 699 072 698!","bot");
+
+// ── Clear field error
+function clearError(el) {
+  el.style.borderColor = '';
+  const e = el.parentNode.querySelector('.ferr');
+  if (e) e.remove();
+}
+
+// ══════════════════════════════════════════════
+// CONTACT FORM — secure submission
+// ══════════════════════════════════════════════
+document.getElementById('luxe-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  // ── Honeypot check: if filled, it's a bot — fail silently
+  if (document.getElementById('hp_website').value !== '') {
+    this.reset();
+    return;
+  }
+
+  // ── Rate limit
+  const now = Date.now();
+  if (now - _lastSubmit.form < FORM_COOLDOWN) {
+    alert('Please wait a moment before submitting again.');
+    return;
+  }
+
+  // ── Get fields
+  const nameEl    = document.getElementById('f-name');
+  const emailEl   = document.getElementById('f-email');
+  const hotelEl   = document.getElementById('f-hotel');
+  const msgEl     = document.getElementById('f-message');
+  const btn       = this.querySelector('button[type="submit"]');
+
+  // ── Clear previous errors
+  [nameEl, emailEl, hotelEl, msgEl].forEach(clearError);
+
+  // ── Validate
+  let valid = true;
+  const name  = sanitize(nameEl.value);
+  const email = sanitize(emailEl.value);
+  const hotel = sanitize(hotelEl.value);
+  const msg   = sanitize(msgEl.value);
+
+  if (!name) { fieldError(nameEl, 'Name is required.'); valid = false; }
+  if (!email || !isValidEmail(email)) { fieldError(emailEl, 'Please enter a valid email.'); valid = false; }
+  if (msg.length > 2000) { fieldError(msgEl, 'Message is too long (max 2000 characters).'); valid = false; }
+
+  if (!valid) return;
+
+  // ── Submit
+  _lastSubmit.form = now;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const formData = new FormData();
+    formData.append('name',     name);
+    formData.append('email',    email);
+    formData.append('hotel',    hotel);
+    formData.append('interest', document.getElementById('f-interest').value);
+    formData.append('message',  msg);
+
+    const res = await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = '#4CAF50';
+      this.reset();
+    } else {
+      btn.textContent = 'Error — try WhatsApp';
+      btn.style.background = '#E53935';
+    }
+  } catch (err) {
+    btn.textContent = 'Error — try WhatsApp';
+    btn.style.background = '#E53935';
+  }
+
+  setTimeout(() => {
+    btn.textContent = 'Send Message →';
+    btn.style.background = '';
+    btn.disabled = false;
+  }, 3000);
+});
+
+// ══════════════════════════════════════════════
+// CHAT WIDGET
+// ══════════════════════════════════════════════
+let loOpen = false;
+let loInit = false;
+
+function loToggle() {
+  const w = document.getElementById('lo-win');
+  loOpen = !loOpen;
+  w.classList.toggle('open', loOpen);
+  if (loOpen && !loInit) {
+    loInit = true;
+    loAddMsg("Welcome to LUXE OPS! 👋 I'm here to help you automate your hotel with AI. What would you like to know?", "bot");
   }
 }
-function loSend(){
-  const ci=document.getElementById('lo-ci');
-  const text=ci.value.trim();
-  if(!text)return;
-  ci.value='';
+
+function loAddMsg(text, role) {
+  const box = document.getElementById('lo-msgs');
+  const d = document.createElement('div');
+  d.className = 'lo-msg ' + role;
+  // Sanitize bot text before inserting (defense in depth)
+  const safe = role === 'user' ? sanitize(text) : text.replace(/\n/g, '<br>');
+  d.innerHTML = `<div class="lo-mav">${role === 'bot' ? 'L' : 'U'}</div><div class="lo-bbl">${safe}</div>`;
+  box.appendChild(d);
+  box.scrollTop = box.scrollHeight;
+}
+
+function loShowTyping() {
+  const box = document.getElementById('lo-msgs');
+  const d = document.createElement('div');
+  d.className = 'lo-msg bot'; d.id = 'lo-typ';
+  d.innerHTML = `<div class="lo-mav">L</div><div class="lo-bbl"><div class="lo-typing"><div class="lo-td"></div><div class="lo-td"></div><div class="lo-td"></div></div></div>`;
+  box.appendChild(d);
+  box.scrollTop = box.scrollHeight;
+}
+
+async function loAsk(rawText) {
+  // ── Rate limit chat
+  const now = Date.now();
+  if (now - _lastSubmit.chat < CHAT_COOLDOWN) return;
+  _lastSubmit.chat = now;
+
+  // ── Sanitize input
+  const text = sanitize(rawText);
+  if (!text) return;
+
+  document.getElementById('lo-qr').style.display = 'none';
+  loAddMsg(text, 'user');
+  loShowTyping();
+
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 12000); // 12s timeout
+
+    const res = await fetch(WEBHOOK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        sessionId: SESSION,
+        action: 'sendMessage',
+        chatInput: text
+      }),
+      signal: controller.signal
+    });
+
+    clearTimeout(timeout);
+    const data = await res.json();
+    document.getElementById('lo-typ')?.remove();
+
+    let reply = data.output || data.text || data.message || data.reply || '';
+    if (reply) reply = reply.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>');
+    loAddMsg(reply || "How can I help you today?", "bot");
+
+  } catch (err) {
+    document.getElementById('lo-typ')?.remove();
+    loAddMsg("Please reach us at kerrouch@luxeops.it.com or WhatsApp +212 699 072 698!", "bot");
+  }
+}
+
+function loSend() {
+  const ci = document.getElementById('lo-ci');
+  const text = ci.value.trim();
+  if (!text) return;
+  ci.value = '';
   loAsk(text);
 }
-window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20);});
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});},{threshold:0.1});
-document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
-document.getElementById('luxe-form').addEventListener('submit',async function(e){
-  e.preventDefault();
-  const btn=this.querySelector('button[type="submit"]');
-  btn.textContent='Sending...';btn.disabled=true;
-  const data=new FormData(this);
-  try{
-    const res=await fetch('https://formspree.io/f/xqewzlez',{method:'POST',body:data,headers:{'Accept':'application/json'}});
-    if(res.ok){btn.textContent='Message Sent ✓';btn.style.background='#4CAF50';this.reset();}
-    else{btn.textContent='Error — try WhatsApp';btn.style.background='#E53935';}
-  }catch(e){btn.textContent='Error — try WhatsApp';btn.style.background='#E53935';}
-  setTimeout(()=>{btn.textContent='Send Message →';btn.style.background='';btn.disabled=false;},3000);
+
+// ══════════════════════════════════════════════
+// SCROLL & ANIMATIONS
+// ══════════════════════════════════════════════
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
 });
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 </body>
-</
+</html>
